@@ -10,5 +10,43 @@ package somethingsimplepos;
  * @author adingreenwald
  */
 public class User {
+    public Register register;
+    public String name;
+    public int id;
+
+    public User(String name, int id) {
+        register = new Register(id);
+        this.name = name;
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
+    
+    
+    public void makeNewSale(){
+        
+    }
+    
+    public void enterItem(){
+        
+    }
+    
+    public void endSale(){
+        
+    }
 }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package somethingsimplepos;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +18,7 @@ public class SomethingSimplePOS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        View.main(args);
     }
     
 }
