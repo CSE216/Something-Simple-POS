@@ -7,6 +7,7 @@ package somethingsimplepos;
 
 /**
  *
+ * @author ryanfitzgerald
  * @author Pablo
  */
 public class SomethingSimplePOS {
