@@ -17,10 +17,5 @@ public class Register {
         catalog = ProductCatalog.getInstance();
         this.userId = userId;
     }
-
-    public Register() {
-        this.catalog = ProductCatalog.getInstance();
-    }
-    
     
 }
