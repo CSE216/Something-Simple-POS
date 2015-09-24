@@ -11,4 +11,26 @@ package somethingsimplepos;
  */
 public class Store {
     
+    private String address;
+    private String name;
+    private ProductCatalog catalog;
+    
+    public Store(String address, String name, ProductCatalog catalog){
+        this.address = address;
+        this.name = name;
+        this.catalog = catalog;
+    }
+    
+    public String getAddress(){
+        return address;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public ProductCatalog getCatalog(){
+        return catalog;
+    }
+    
 }
