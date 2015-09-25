@@ -22,7 +22,7 @@ public class Register {
     }
     
     public void makeNewSale(){
-        if((currentSale!=null) || (currentSale.isComplete() == true)){
+        if(currentSale!=null){
         currentSale = new Sale();
         }
     }
@@ -33,40 +33,35 @@ public class Register {
     
     public double makePayment(double amountTendered, String paymentType){
         currentSale.makePayment(amountTendered);
-        return amountTendered - getTotalTax();
+        return amountTendered - getTotal();
     }
     
     public void endSale(){
-        currentSale.setComplete(); //Sale method for end of sale needed
-        //inform database class that sale has ended?
+        currentSale.setComplete(); 
+        currentSale = null;
     }
     
     public double getTotal(){
-        double total = currentSale.getTotal();
-        return total;
-    }
-    
-    public double getTotalTax(){
-        return currentSale.getTotal()*1.06;
+        return currentSale.getTotal();
     }
     
     public void cancelItem(int itemId){
         currentSale.removeItem(itemId);
     }
     
-    public String printReceipt(){
-        return "";
+    public void printReceipt(){
+        
     }
     
     public void suspendSale(){
-        //suspend current sale
+ 
     }
     
     public void resumeSale(){
-        //resume current sale
+
     }
     
     public void managerOverride(int managerId){
-        //handle manager override 
+   
     }
 }
