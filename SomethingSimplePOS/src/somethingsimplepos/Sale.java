@@ -10,5 +10,26 @@ package somethingsimplepos;
  * @author srule_000
  */
 public class Sale {
+    public void removeItem(int itemId){
+        
+    }
     
+    public double getTotal(){
+        return 0.0;
+    }
+    
+    public void makeLineItem(int itemId, int quantity){
+        
+    }
+    
+    public void makePayment(double amountTendered){
+        
+    }
+    
+    public boolean isComplete(){
+        
+    }
+    
+    public void setComplete(){
+    }
 }
