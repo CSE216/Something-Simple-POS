@@ -15,7 +15,7 @@ public class UserHandler {
     
     public UserHandler(User user) {
         this.user = user;
-        register = new Register(user.getId());
+        //register = new Register(user.getId());
     }
     
     public void startSale(){

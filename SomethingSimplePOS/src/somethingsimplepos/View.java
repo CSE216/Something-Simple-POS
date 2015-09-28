@@ -361,7 +361,7 @@ public class View extends javax.swing.JFrame {
         int UserId = 0;
         userName = v.showInputDialog("Enter User Name: ");
         UserId = Integer.parseInt(v.showInputDialog("Enter User ID: "));
-        user = new User(userName, UserId);
+        user = new Cashier(userName, UserId);
         userHandler = new UserHandler(user);
         userNameField.setText("Name: "+user.getName());
         userIdField.setText("ID: "+user.getId());

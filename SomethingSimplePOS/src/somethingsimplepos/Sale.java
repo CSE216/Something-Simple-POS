@@ -27,7 +27,7 @@ public class Sale {
     }
     
     public boolean isComplete(){
-        
+        return true;
     }
     
     public void setComplete(){

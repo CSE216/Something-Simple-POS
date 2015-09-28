@@ -9,13 +9,13 @@ package somethingsimplepos;
  *
  * @author adingreenwald
  */
-public class User {
+public abstract class User {
     public Register register;
     public String name;
     public int id;
 
     public User(String name, int id) {
-        register = new Register(id);
+        //register = new Register(id);
         this.name = name;
         this.id = id;
     }
@@ -39,10 +39,12 @@ public class User {
     
     
     public void makeNewSale(){
+        Sale sale = new Sale();
         
     }
     
     public void enterItem(){
+        //Product product = new Product();
         
     }
     
