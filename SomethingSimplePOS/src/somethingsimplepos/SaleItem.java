@@ -10,13 +10,14 @@ package somethingsimplepos;
  * @author ryanfitzgerald
  */
 public class SaleItem {
-    
+    private int id;
     private int quantity;
     private ProductDesc desc;
     
-    public SaleItem(int quantity, ProductDesc desc){
+    public SaleItem(int id,int quantity){
+        this.id=id;
         this.quantity = quantity;
-        this.desc = desc;
+        
     }
     
     public double getSubtotal(){
