@@ -9,11 +9,9 @@ package somethingsimplepos;
  *
  * @author srule_000
  */
-
+ 
 public class Sale extends Transaction { 
-    
-
-    //private List<SaleItem> lineItems=new ArrayList()<SaleItem>;
+   
     
     public void removeItem(int itemId){
         
@@ -24,7 +22,7 @@ public class Sale extends Transaction {
     }
     
     public void makeLineItem(int itemId, int quantity){
-       SaleItem item= new SaleItem(quantity,itemId);
+      
         
     }
     
