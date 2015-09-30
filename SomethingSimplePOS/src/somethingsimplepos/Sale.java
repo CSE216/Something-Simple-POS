@@ -12,6 +12,7 @@ package somethingsimplepos;
  
 public class Sale extends Transaction { 
    
+    String paymenttype;
     
     public void removeItem(int itemId){
         
@@ -26,14 +27,8 @@ public class Sale extends Transaction {
         
     }
     
-    public void makePayment(double amountTendered){
-        
+    public void makePayment(double amountTendered, String paymenttype){
+        this.paymenttype=paymenttype;
     }
-    
-    public boolean isComplete(){
-        return true;
-    }
-    
-    public void setComplete(){
-    }
+   
 }
