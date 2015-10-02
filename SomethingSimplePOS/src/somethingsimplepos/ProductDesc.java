@@ -11,6 +11,7 @@ package somethingsimplepos;
  */
 public class ProductDesc{
     
+    private ProductCatalog catalog;
     private int id;
     private String description;
     private double price;
@@ -19,6 +20,15 @@ public class ProductDesc{
         this.id = id;
         this.description = description;
         this.price = price;
+    }
+
+    public ProductDesc(int itemID) {
+        getProductDescription(id);
+    }
+    
+    private void getProductDescription(int id){
+        description = catalog.getProductDescription(id);
+        // use this method to get description and price of a product using the product id
     }
     
     public int getId(){
@@ -33,6 +43,7 @@ public class ProductDesc{
         return price;
     }
     
+    @Override
     public String toString(){
         return "Product Id: " + id + "  Product Description: " + description + "   Price: " + price;
     }

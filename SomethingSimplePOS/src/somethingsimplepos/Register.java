@@ -1,4 +1,5 @@
 package somethingsimplepos;
+import java.util.LinkedList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,7 +33,7 @@ public class Register {
     }
     
     public double makePayment(double amountTendered, String paymentType){
-        currentSale.makePayment(amountTendered);
+        //currentSale.makePayment(amountTendered);
         return amountTendered - getTotal();
     }
     

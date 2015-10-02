@@ -24,7 +24,9 @@ public class ProductCatalog {
         return instance;
     }
     
-    public String getProductDescription(){
+    public String getProductDescription(int itemId){
+        // use this method to get description and price of a product from the database using the product id
+        
         return null;
     }
 }

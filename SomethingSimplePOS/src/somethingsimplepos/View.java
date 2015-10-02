@@ -46,6 +46,7 @@ public class View extends javax.swing.JFrame {
         finishSaleButton = new javax.swing.JButton();
         pay = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        showProductCatalog = new javax.swing.JButton();
         userNameField = new javax.swing.JTextField();
         userIdField = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -163,6 +164,13 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        showProductCatalog.setText("Show Catalog");
+        showProductCatalog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showProductCatalogActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -202,7 +210,9 @@ public class View extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(enterButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(finishSaleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(finishSaleButton, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(showProductCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -232,7 +242,9 @@ public class View extends javax.swing.JFrame {
                             .addComponent(Button0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(enterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pay, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showProductCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,17 +367,15 @@ public class View extends javax.swing.JFrame {
     private void startSaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSaleButtonActionPerformed
         // TODO add your handling code here:        
         JOptionPane v = new JOptionPane();
-        UserHandler userHandler;
         String userName = "";
         User user;
         int UserId = 0;
         userName = v.showInputDialog("Enter User Name: ");
         UserId = Integer.parseInt(v.showInputDialog("Enter User ID: "));
         user = new Cashier(userName, UserId);
-        userHandler = new UserHandler(user);
         userNameField.setText("Name: "+user.getName());
         userIdField.setText("ID: "+user.getId());
-        userHandler.startSale();
+        user.makeNewSale();
     }//GEN-LAST:event_startSaleButtonActionPerformed
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
@@ -395,6 +405,12 @@ public class View extends javax.swing.JFrame {
     private void userIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIdFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userIdFieldActionPerformed
+
+    private void showProductCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductCatalogActionPerformed
+        // TODO add your handling code here:
+        String[] args = new String[1];
+        ProductCatalogView.main(args);
+    }//GEN-LAST:event_showProductCatalogActionPerformed
 
     private int number;
 
@@ -467,6 +483,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton pay;
+    private javax.swing.JButton showProductCatalog;
     private javax.swing.JButton startSaleButton;
     private java.awt.TextArea textArea1;
     private javax.swing.JTextField userIdField;

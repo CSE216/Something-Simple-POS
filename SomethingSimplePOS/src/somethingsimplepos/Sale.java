@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package somethingsimplepos;
+import java.util.LinkedList;
 
 /**
  *
@@ -12,7 +13,9 @@ package somethingsimplepos;
  
 public class Sale extends Transaction { 
    
-    String paymenttype;
+    private String paymenttype;
+    private LinkedList<Product> saleItems;
+    private Product currentProduct;
     
     public void removeItem(int itemId){
         
@@ -23,8 +26,8 @@ public class Sale extends Transaction {
     }
     
     public void makeLineItem(int itemId, int quantity){
-      
-        
+        currentProduct = new Product(itemId, quantity);
+        saleItems.add(currentProduct);
     }
     
     public void makePayment(double amountTendered, String paymenttype){
