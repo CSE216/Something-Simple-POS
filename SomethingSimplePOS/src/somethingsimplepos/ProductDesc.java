@@ -28,7 +28,7 @@ public class ProductDesc{
     
     private void getProductDescription(int id){
         description = catalog.getProductDescription(id);
-        // use this method to get description and price of a product using the product id
+        // use this method to get description and price of a product from ProductCatalog using the product id
     }
     
     public int getId(){

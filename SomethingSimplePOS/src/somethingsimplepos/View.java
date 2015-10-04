@@ -380,6 +380,10 @@ public class View extends javax.swing.JFrame {
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         // TODO add your handling code here:
+        int id = getItemIdFromField();
+        Product currentProduct = new Product(id, 1);
+        textArea1.append(currentProduct.toString());
+        jTextField1.setText("");
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void finishSaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishSaleButtonActionPerformed
@@ -389,6 +393,9 @@ public class View extends javax.swing.JFrame {
 
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
         // TODO add your handling code here:
+        int total;
+        
+        //total = 
 
     }//GEN-LAST:event_payActionPerformed
 

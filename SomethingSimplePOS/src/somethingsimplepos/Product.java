@@ -11,6 +11,7 @@ package somethingsimplepos;
  */
 public class Product {
     private ProductDesc description;
+    private String descriptionString;
     private int quantity;
 
     public Product(ProductDesc description, int quantity) {
@@ -19,15 +20,8 @@ public class Product {
     }
     
     public Product(int itemID, int quantity){
+        this.quantity = quantity;
         description = new ProductDesc(itemID);
-    }
-
-    public ProductDesc getDescription() {
-        return description;
-    }
-
-    public void setDescription(ProductDesc description) {
-        this.description = description;
     }
 
     public int getQuantity() {
