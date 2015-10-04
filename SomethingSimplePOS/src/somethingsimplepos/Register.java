@@ -39,7 +39,7 @@ public class Register {
     }
     
     public double makePayment(double amountTendered, String paymentType){
-        currentSale.makePayment(amountTendered);
+        currentSale.makePayment(amountTendered,paymentType);
         return amountTendered - getTotal();
     }
     
