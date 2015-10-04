@@ -13,7 +13,7 @@ public class SaleItem {
     private int id;
     private int quantity;
     private ProductDesc desc;
-    
+  
     public SaleItem(int id,int quantity){
         this.id=id;
         this.quantity = quantity;
