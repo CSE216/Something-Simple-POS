@@ -4,34 +4,47 @@
  * and open the template in the editor.
  */
 package somethingsimplepos;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-/**
- *
- * @author srule_000
- */
- 
-public class Sale extends Transaction { 
-   
-    private String paymenttype;
-    private LinkedList<Product> saleItems;
+public class Sale extends Transaction {
+    
+    private LinkedList<Product> saleItems = new LinkedList<>();
     private Product currentProduct;
-    
-    public void removeItem(int itemId){
-        
+    private ArrayList<SaleItem> purchases = new ArrayList<SaleItem>();
+    private String paymenttype;
+
+    public void removeItem(int itemId) {
+        int index = -9;
+        index = purchases.indexOf(itemId);
+        if (index != -9) {
+            purchases.remove(itemId);
+        } else {
+            System.out.println("Not a valid itemId");
+        }
     }
-    
-    public double getTotal(){
-        return 0.0;
+
+    public double getTotal() {
+        double total = 0;
+        for (int i = 0; i < purchases.size(); i++) {
+            total += purchases.get(i).getSubtotal();
+        }
+        return total;
     }
-    
-    public void makeLineItem(int itemId, int quantity){
+
+    public void makeLineItem(int itemId, int quantity) {
         currentProduct = new Product(itemId, quantity);
         saleItems.add(currentProduct);
+        SaleItem item = new SaleItem(itemId, quantity);
+        purchases.add(item);
+
     }
-    
-    public void makePayment(double amountTendered, String paymenttype){
-        this.paymenttype=paymenttype;
+
+    public double makePayment(double amountTendered, String paymenttype) {
+        this.paymenttype = paymenttype;
+        setComplete();
+        return amountTendered - getTotal();
     }
-   
+
 }
