@@ -53,6 +53,10 @@ public class Register {
         return currentSale.getTotal();
     }
     
+    public double getSubtotal(){
+        int currentItem = currentSale.getSaleSize()-1;
+        return currentSale.getLineItem(currentItem).toString();
+    }
     public void cancelItem(int itemId){
         currentSale.removeItem(itemId);
         String desc = "Removed " + itemLookup(itemId);
@@ -89,16 +93,6 @@ public class Register {
             currentSale = suspendedSales.get(saleId);
             suspendedSales.remove(currentSale);
         }    
-    }
-    
-    public void managerOverride(int userId){
-        //test if userId matches a manager 
-        if (true){
-        this.userId = userId;
-        }
-        else{
-            System.out.println("Override Error: Please enter a valid manager ID.");
-        }
     }
     
     public String toString(){

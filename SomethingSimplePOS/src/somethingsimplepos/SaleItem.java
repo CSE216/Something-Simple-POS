@@ -24,4 +24,21 @@ public class SaleItem {
         return quantity * desc.getPrice();
     }
     
+    public int getId(){
+        return id;
+    }
+    
+    public int getQuantity(){
+        return quantity;
+    }
+    
+    public String getDesc(){
+        return desc.getDescription();
+    }
+    
+    public String toString(){
+        return "Item ID " + id + ": "+ getDesc() + ", Quantity: " +
+                quantity + ", Subtotal: " + getSubtotal();
+    }
+    
 }

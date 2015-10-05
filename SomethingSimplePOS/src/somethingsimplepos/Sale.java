@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Sale extends Transaction {
-    
     private LinkedList<Product> saleItems = new LinkedList<>();
     private Product currentProduct;
     private ArrayList<SaleItem> purchases = new ArrayList<SaleItem>();
@@ -24,6 +23,14 @@ public class Sale extends Transaction {
             System.out.println("Not a valid itemId");
         }
     }
+    public int getSaleSize(){
+        return purchases.size();
+    }
+    
+    public SaleItem getLineItem(int index){
+        return purchases.get(index);
+    }
+
 
     public double getTotal() {
         double total = 0;

@@ -34,11 +34,22 @@ public class Receipt {
     public void createReceipt(int userId, Store store){
         String temp = store.getName() + blankLine + "Cashier: " + userId + blankLine;
         build.append(temp);
-        temp = "Date of sale: " + dateSale + blankLine; 
-        temp += blankLine + "Total: $" + sale.getTotal() + blankLine;
-        temp += blankLine + "Thank you for shopping with us!";
+        temp = "Date of sale: " + dateSale + blankLine + blankLine;
+        temp += "Item, Quantity, Subtotal" + blankLine;
+        temp += "-----------------------------" + blankLine;
         build.append(temp);
+        
+        for(int i=0; i<sale.getSaleSize(); i++){
+            temp = sale.getLineItem(i).getDesc() + ", ";
+            temp += sale.getLineItem(i).getQuantity() + ",";
+            temp += sale.getLineItem(i).getSubtotal() + blankLine;
+            build.append(temp);
+        }
+        
+        temp = blankLine + "Total: $" + sale.getTotal() + blankLine;
+        temp += blankLine + "Thank you for shopping with us!";
         temp = "Thank you for shopping with us!";
+        build.append(temp);
         try{
         printReceipt();
         }
