@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package somethingsimplepos;
+import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -12,9 +16,15 @@ package somethingsimplepos;
 public class ProductCatalog {
 
     static ProductCatalog instance;
+    private ArrayList<ProductDesc> catalog = new ArrayList<ProductDesc>();
 
     private ProductCatalog() {
-        
+        try{
+            fillCatalog();
+        }
+        catch(FileNotFoundException e){
+            System.err.println("File not found");
+        }
     }
 
     public static synchronized ProductCatalog getInstance() {
@@ -27,4 +37,15 @@ public class ProductCatalog {
     public String getProductDescription(){
         return null;
     }
+    
+    private void fillCatalog()throws FileNotFoundException{
+        File inFile = new File("ProductCatalog.txt");
+        Scanner sc = new Scanner(inFile);
+        while(sc.hasNext()){
+            int id = sc.nextInt();
+            String desc = sc.next();
+            Double price = sc.nextDouble();
+            catalog.add(new ProductDesc(id, desc, price));
+          }
+     }
 }
