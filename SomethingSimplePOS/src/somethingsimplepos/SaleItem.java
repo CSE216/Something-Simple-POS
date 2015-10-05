@@ -14,10 +14,10 @@ public class SaleItem {
     private int quantity;
     private ProductDesc desc;
   
-    public SaleItem(int id,int quantity){
+    public SaleItem(int id,int quantity, ProductDesc desc){
         this.id=id;
         this.quantity = quantity;
-        
+        this.desc = desc;
     }
     
     public double getSubtotal(){
