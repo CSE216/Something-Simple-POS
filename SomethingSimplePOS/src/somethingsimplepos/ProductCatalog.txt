@@ -1,0 +1,11 @@
+0 Chips 2.99
+1 Soda 1.59
+2 Water 0.99
+3 Sandwich 7.99
+4 Hot-Dog 2.99
+5 French-Fries 2.99
+6 Hamburger 3.99
+7 Cheeseburger 4.99
+8 Cheesesteak 5.99
+9 Ice-Cream 3.99
+10 Cookie 0.99
