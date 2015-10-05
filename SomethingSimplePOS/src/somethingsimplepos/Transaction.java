@@ -10,7 +10,7 @@ package somethingsimplepos;
  * @author srule_000
  */
 public class Transaction {
-        public boolean isComplete=false;
+    public boolean isComplete=false;
          
     public boolean isComplete(){
         return isComplete;
